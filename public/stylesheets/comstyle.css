@@ -1,0 +1,79 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: url(../images/com_in.jpg) no-repeat;
+  background-size: cover;
+}
+.login-box{
+  margin-right: 595px;
+  width: 40%;
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%,-50%);
+  color: blue;
+}
+.login-box h1{
+  float: left;
+  font-size: 40px;
+  border-bottom: 3px  solid black;
+  margin-bottom: 50px;
+  padding: 5px 0;
+  width: 70%;
+  position: relative;
+}
+.textbox{
+  width: 50%;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 8px 0;
+  margin: 8px 0;
+  border-bottom: 1px solid black;
+}
+.textbox i{
+  width: 26px;
+  float: left;
+  text-align: right;
+}
+.textbox input{
+  border: none;
+  outline: none;
+  background: none;
+  color: grey;
+  font-size: 18px;
+  width: 80%;
+  float: left;
+  margin: 0 10px;
+}
+.btn {
+  width: 50%;
+  background: none;
+  border: 2px solid black;
+  color: black;
+  padding: 10px 50px 10px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 12px 0px;
+}
+#forgot-password{
+    text-decoration: none;
+    color: blue;
+    padding: 80px 60px;
+    font-weight: lighter;
+    font-size: .85em;
+    font-family: 'Roboto', sans-serif;
+}
+#new-user{
+
+    margin-right:0px 12px; text-decoration: none;
+    color: blue;
+    float: center;
+    padding: 0px 0px;
+    font-weight: bold;
+    font-size: .85em;
+    font-family: 'Roboto', sans-serif;
+}
+    
+}

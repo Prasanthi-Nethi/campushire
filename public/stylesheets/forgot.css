@@ -1,0 +1,57 @@
+body{
+   background:url('forgotimage.jpg') no-repeat center center fixed;
+   -webkit-background-size:cover;
+   -moz-background-size:cover;
+   -o-background-size:cover;
+   background-size: cover;
+}
+form {
+  width: 350px;
+  height: 310px;
+  background: rgba(0, 0, 0, 0.1);
+  color: #fff;
+  top: 40%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+  padding: 10px 40px;
+}
+
+h1 {
+  font-size: 33px;
+  color: black;
+}
+p{
+  color:#000000;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+.fp {
+  text-align: center;
+  background: white;
+  border: solid 0.5px white;
+  width: unset;
+  height: 30px;
+  width:230px;
+  transition: 1s ease;
+}
+
+.sbtn {
+  border: none;
+  outline: none;
+  height: 40px;
+  width:100px;
+  background: #1c8adb;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 40px;
+}
+
+.sbtn:hover {
+  cursor: pointer;
+  background: #39dc79;
+  color: #000;
+}

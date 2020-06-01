@@ -1,0 +1,272 @@
+
+body
+{
+  margin:0px;
+  padding:0px;
+   /* background-image:url(emp.jpg); */
+  /* background-repeat: no-repeat;
+  background-size:cover;
+  background-position: center; */
+}
+.bgimage{
+  background-image:url(../images/emp.jpg);
+  background-repeat: no-repeat;
+  /* background-size:cover; */
+  width: 100%;
+  height:500px;
+  background-position: center;
+}
+header{
+ 
+  height: 100vh;
+  background-size:cover;
+  background-position: center;
+}
+ul{
+  float:right;
+  list-style-type: none;
+  margin-top:25px;
+}
+ul li{
+  display:inline-block;
+}
+ul li a{
+  text-decoration:none;
+  color: black;
+  padding:10px 20px;
+  transition: 0.6s ease;
+
+}
+ul li a:hover{
+  background-color:#fff;
+  color:000;
+}
+.nav{
+  font-size: 25px;
+ 
+}
+.title{
+  position:absolute;
+  top:50%;
+  left:50%;
+  padding:10px 0px 0px 0px;
+ /* transform: translate(-50%,-50%);*/
+}
+.title h1{
+  color:black;
+  font-size:70px;
+}
+.navbar {
+  position: absolute;
+   font-size: 25px;
+  /* overflow: hidden; */
+  width:100%;
+  background-color: transparent;
+  float:right;
+}
+
+.navbar_inner a {
+  /* float: left; */
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar_inner {
+  float: right;
+  font-size: 25px;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+.navbar_inner a:hover{
+  background-color:grey;
+}
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+
+
+.dropdown .dropbtn {
+  font-size: 20px;  
+  border: none;
+  outline: none;
+  color: white;
+  /* padding: 14px 16px; */
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+/*.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}*/
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:black;
+  min-width: 160px;
+  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.dropdown-content a:hover {
+  background-color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.content1
+{
+  color: blue;
+  /* position: ; */
+  height:500px;
+  width:100%;
+}
+.wall
+{
+  background-image: url(../images/wall1.jpg);
+}
+.column {
+  float: left;
+  width: 50%;
+  height:250px;
+  color:black;
+  background-image: url(../images/hire.jpg);
+}
+.column21 {
+  float: left;
+  width: 50%;
+  height:250px;
+  color:black;
+ background-color: white;
+
+}
+
+.column22 {
+  float: right;
+  width: 50%;
+  height:250px;
+  
+  background-color: black;
+
+}
+.column11 {
+  float: left;
+  width: 25%;
+  height:250px;
+  color:black;
+  background-image: url(../images/col4.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.column12 {
+  float: left;
+  width: 25%;
+  height:250px;
+  color:black;
+  background-image: url(../images/col1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.column13 {
+  float: left;
+  width: 25%;
+  height:250px;
+  color:black;
+  background-image: url(../images/col2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.column14 {
+  float: left;
+  width: 25%;
+  height:250px;
+  color:black;
+  background-image: url(../images/col3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  background-image: url(../images/light.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+.divspace
+{
+  height: 20px;
+}
+
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+
