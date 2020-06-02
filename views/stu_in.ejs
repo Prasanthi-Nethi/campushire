@@ -3,19 +3,21 @@
 <head>
 	<title>SIGN IN</title>
 	<link rel="stylesheet" type="text/css" href="stylesheets/stu_style.css">
+	<script type="text/javascript" src="angularjs/angular.min.js"></script>
+  <script type="text/javascript" src="angularjs/studentin.js"></script>
 </head>
-<body>
-	<div class="login-box">
+<body ng-app="studentinApp">
+	<div class="login-box" ng-controller="studentinController">
 		<h1> <bold> STUDENT LOGIN</bold> </h1>
 			<form>
 				<p>Email</p>
-				<input type="email" name="Email" placeholder="Enter Your Email">
+				<input type="email" ng-model="studentin.Email" placeholder="Enter Your Email">
 				<p>Password</p>
-				<input type="password" name="Password" placeholder="Enter Your Password">
-				<input type="submit" name="Submit" value="Login">
-				<p><a href ="#" id="forgot-password"> New User? </a></p>
+				<input type="password" ng-model="studentin.Password" placeholder="Enter Your Password">
+				<button ng-click="studentIn(studentin)">Login</button>
+				<p><a href ="/stu_up" id="forgot-password"> New User? </a></p>
 				<br>
-				<p><a href ="#" id="new-user"> Forget Password </a></p>
+				<p><a href ="/forget" id="new-user"> Forget Password </a></p>
 			</form>
 	</div>
 </body>

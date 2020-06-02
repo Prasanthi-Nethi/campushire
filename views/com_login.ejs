@@ -5,25 +5,27 @@
     <title></title>
     
     <link href="stylesheets/comstyle.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="angularjs/angular.min.js"></script>
+  <script type="text/javascript" src="angularjs/companyin.js"></script>
   </head>
-  <body>
+  <body ng-app="companyinApp ">
 
-<div class="login-box">
+<div class="login-box" ng-controller="companyincontroller">
   <h1>Company Login</h1>
   <div class="textbox">
     <i class="fas fa-user" aria hidden="True"></i>
-    <input type="text" placeholder="Username">
+    <input type="email" ng-model="companyin.Email" placeholder="enter your email">
   </div>
 
   <div class="textbox">
     <i class="fas fa-lock" aria hidden="True"></i>
-    <input type="password" placeholder="Password">
+    <input type="password"  ng-model="companyin.password" placeholder="Password">
   </div>
 
-  <input type="button" class="btn" value="Sign in"><br><br>
+  <button ng-click="companyIn(companyin)">Login</button>
   <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
 
 				<a href ="#" id="forgot-password"> Forget Password?</a><br><br>
-								<br><a href ="#" id="forgot-password"> Don't have a account? Create New?</a><br><br>
+								<br><a href ="/com_up" id="forgot-password"> Don't have a account? Create New?</a><br><br>
   </body>
 </html>

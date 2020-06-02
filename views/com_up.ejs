@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Registration Form</title>
 <link href="stylesheets/com_up.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="angularjs/angular.min.js"></script>
+  <script type="text/javascript" src="angularjs/companyup.js"></script>
 </head>
-<body>
+<body ng-app="companyupApp">
       
 
-<div class="wrapper">
+<div class="wrapper" ng-controller="companyupcontroller">
   
   
     <div class="form">
@@ -18,27 +20,27 @@
     </div>
        <div class="inputfield">
           <label>First Name</label>
-          <input type="text" class="input">
+          <input type="text" class="input" ng-model="companyup.fname">
        </div>  
         <div class="inputfield">
           <label>Last Name</label>
-          <input type="text" class="input">
+          <input type="text" class="input" ng-model="companyup.lname">
        </div> 
        <div class="inputfield">
           <label>Company name</label>
-          <input type="text" class="input">
+          <input type="text" class="input" ng-model="companyup.cname">
        </div> 
        <div class="inputfield">
           <label>Email Address</label>
-          <input type="email" class="input">
+          <input type="email" class="input" ng-model="companyup.email">
        </div>  
        <div class="inputfield">
           <label>Password</label>
-          <input type="password" class="input">
+          <input type="password" class="input" ng-model="companyup.password">
        </div>  
       <div class="inputfield">
           <label>Confirm Password</label>
-          <input type="password" class="input">
+          <input type="password" class="input" ng-model="companyup.cpassword">
        </div> 
         <div class="inputfield">
           <label>Gender</label>
@@ -53,7 +55,7 @@
        </div> 
       <div class="inputfield">
           <label>Phone Number</label>
-          <input type="text" class="input">
+          <input type="text" class="input" ng-model="companyup.phoneno">
        </div> 
        
       <div class="inputfield terms">
@@ -64,9 +66,10 @@
           <p>Agreed to terms and conditions</p>
        </div> 
       <div class="inputfield">
-        <input type="submit" value="Signup" class="btn">
+        <button class="btn" ng-click="signupData(companyup)">Register</button>
       </div>
-      <p style="color:black"> Already have an account? <a href="#">Sign in</a><br><br>
+      <p style="color:black"> Already have an account? <a href="/com_login">Sign in</a><br><br>
+
 
        <a href="#" style="color:blue">Back to home!</a>
 

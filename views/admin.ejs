@@ -1,25 +1,22 @@
 <!doctype html>
-
 <html>
   <head>
     <title> login  </title>
     <link rel="stylesheet" href="stylesheets/style1.css" type="text/css">
-  
-
+    <script type="text/javascript" src="angularjs/angular.min.js"></script>
+    <script type="text/javascript" src="angularjs/admin.js"></script>
   </head>
-  <body>
-  <div class="loginBox">
-    
+  <body ng-app='adminApp'>
+  <div class="loginBox" ng-controller="adminController">
     <img src="images/user.png" class="user">
     <h2>Admin Login</h2>
     <form>
       <p>Email</p>
-      <input type="text" name = "" placeholder="Enter Email">
+      <input type="text" ng-model="admin.email" placeholder="Enter Email">
       <p>Password</p>
-      <input type="password" name = "" placeholder="Enter Password">
-      <input type="submit" name = "" value="sign In">
+      <input type="password" ng-model="admin.password" placeholder="Enter Password">
+      <button ng-click="adminData(admin)">Login</button>
       <a href="/forget"> Forget Password?</a> 
-      
     </form>
   </div>
   </body>

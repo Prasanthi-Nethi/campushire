@@ -1,38 +1,37 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Registration Form</title>
-<link href="stylesheets/stu_style1.css" rel="stylesheet" type="text/css">
+  <title>Registration Form</title>
+  <link href="stylesheets/stu_style1.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="angularjs/angular.min.js"></script>
+  <script type="text/javascript" src="angularjs/studentup.js"></script>
 </head>
-<body>
-      
-
-<div class="wrapper">
-  
-  
+<body ng-app="studentupApp">
+<div class="wrapper" ng-controller="studentupController">
     <div class="form">
        <div class="inputfield">
           <label>First Name</label>
-          <input type="text" class="input">
+          <input type="text" class="input" ng-model="studentup.fname">
        </div>  
         <div class="inputfield">
           <label>Last Name</label>
-          <input type="text" class="input">
+          <input type="text" class="input" ng-model="studentup.lname">
        </div>  
        <div class="inputfield">
           <label>Password</label>
-          <input type="password" class="input">
+          <input type="password" class="input" ng-model="studentup.password">
        </div>  
       <div class="inputfield">
           <label>Confirm Password</label>
-          <input type="password" class="input">
+          <input type="password" class="input" ng-model="studentup.cpassword">
        </div> 
         <div class="inputfield">
           <label>Gender</label>
           <div class="custom_select">
-            <select>
+            <select ng-model="studentup.gender">
               <option value="">Select</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
@@ -42,19 +41,19 @@
        </div> 
         <div class="inputfield">
           <label>Email Address</label>
-          <input type="text" class="input">
+          <input type="text" class="input" ng-model="studentup.email">
        </div> 
       <div class="inputfield">
           <label>Phone Number</label>
-          <input type="text" class="input">
+          <input type="text" class="input" ng-model="studentup.mobile">
        </div> 
       <div class="inputfield">
           <label>Address</label>
-          <textarea class="textarea"></textarea>
+          <textarea class="textarea" ng-model="studentup.address"></textarea>
        </div> 
       <div class="inputfield">
           <label>Postal Code</label>
-          <input type="text" class="input">
+          <input type="text" class="input" ng-model="studentup.postal">
        </div> 
       <div class="inputfield terms">
           <label class="check">
@@ -64,10 +63,10 @@
           <p>Agreed to terms and conditions</p>
        </div> 
       <div class="inputfield">
-        <input type="submit" value="Register" class="btn">
+        <button class="btn" ng-click="signupData(studentup)">Register</button>
       </div>
     </div>
-</div>	
-	
+</div>  
 </body>
 </html>
+
