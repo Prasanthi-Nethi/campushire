@@ -1,13 +1,13 @@
-var app = angular.module('companyupApp', []);
-app.controller('companyupController', function($scope,$http){
-	$scope.signupData = function(companyup){
+var app = angular.module('CompanyApp', []);
+app.controller('CompanyController', function($scope,$http){
+	$scope.companyData = function(company){
 		$http({
 			method : 'POST',
-			url : '/postsignupdata',
-			data : $scope.companyup
+			url : '/postcompanydata',
+			data : $scope.company
 		}).then(function success(response){
-			alert('Account Created Successfully');
-			$scope.companyup = {};
+			alert('Signup Successfull');
+			$scope.company = {};
 		}, function error(response){
 			alert('Error Occured, Please Try Again');
 		})

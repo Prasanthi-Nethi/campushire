@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Dashboard">
+  <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+  <title>Company</title>
+  <link type="image/png" href="images/adityalogo.png" rel="icon">
+  <!-- Bootstrap core CSS-->
+  <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+  <script src="javascripts/jquery-1.11.1.min.js"></script>
+  <script src="javascripts/bootstrap.min.js"></script>
+  <!-- external css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Custom styles for this template-->
+  <link href="stylesheets/style4.css" rel="stylesheet">
+  <link href="stylesheets/style-responsive.css" rel="stylesheet">
+  <!--Date Picker-->
+  <link href="stylesheets/jquery-ui.css" rel="stylesheet">
+  <script type="text/javascript" src="angularjs/angular.min.js"></script>
+  <script type="text/javascript" src="angularjs/companyhome.js"></script>
+  <style>
+    .panel-box {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+      height: 30px;
+      text-align: center;
+      border: medium none;
+    }
+    .bg-success {
+      background-color: #A3C86D !important;
+      color: #FFF !important;
+    }
+    .bg-warning {
+      background-color: orange !important;
+      color: #FFF !important;
+    }
+
+    .bg-light {
+      background-color: lightblue !important;
+      color: #FFF !important;
+    }
+
+    .bg-lightgreen {
+      background-color: lightgreen !important;
+      color: #FFF !important;
+    }
+
+    .bg-default {
+      background-color: grey !important;
+      color: #FFF !important;
+    }
+
+    .bg-pink {
+      background-color: pink !important;
+      color: #FFF !important;
+    }
+
+    .bg-tomato {
+      background-color: tomato !important;
+      color: #FFF !important;
+    }
+
+    .bg-dodgerblue {
+      background-color: dodgerblue !important;
+      color: #FFF !important;
+    }
+
+    .bg-violet {
+      background-color: violet !important;
+      color: #FFF !important;
+    }
+
+    .success-text {
+      color: #82b33a;
+    }
+
+    .bg-danger {
+      background-color: #FF7857 !important;
+      color: #FFF !important;
+    }
+
+    .danger-text {
+      color: #d15b3d;
+    }
+
+    .panel-box .panel-icon {
+      display: table-cell;
+      padding: px;
+      width: 1%;
+      vertical-align: top;
+      border-radius: 0px;
+      text-align: center;
+      /*border-bottom: 1px solid #fcfcfc;
+      border-top: 1px solid #fcfcfc;
+      border-right: 1px solid #fcfcfc;*/
+    }
+
+    .panel-box .size-h1 {
+      margin-top: 7px;
+    }
+
+    .panel-box .fa {
+      margin-top: 9px;
+    }
+
+    .bg-lovender {
+      background-color: #8075C4 !important;
+      color: #FFF !important;
+    }
+
+    .lovender-text {
+      color: #6a5fb1;
+    }
+
+    .capitalize {
+      text-transform: capitalize;
+    }
+
+    .uppercase {
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body ng-app="myApp">
+  <section id="container">
+    <!-- header start-->
+    <header class="header black-bg">
+      <div class="sidebar-toggle-box">
+        <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+      </div>
+      <!-- logo start--><a class="logo" href="#"><b><img src="images/logo1.png" style="height:55px;width:80px;margin-top:-13px"></b></a>
+      <!-- logo end-->
+      <div class="top-menu">
+        <ul class="nav pull-right top-menu">
+          <li><a class="logout" href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </header>
+    <!-- header end-->
+    <!-- sidebar start-->
+    <aside>
+      <div class="nav-collapse" id="sidebar">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
+          <p class="centered"><a href="#"><i class="fa fa-user-circle" style="font-size:50px"></i></a></p>
+          <h5 class="centered">
+            <p><%=user.name%></p>
+          </h5>
+          <li class="active"><a data-toggle="tab" href="#dashboard"><i class="fa fa-address-card"></i><span>Dashboard</span></a></li>
+          <li class="sub-menu"><a data-toggle="tab" href="#vacancy"><i class="fa fa-plus-square" aria-hidden="true"></i><span>Add Vacancy</span></a></li>
+          <li class="sub-menu"><a data-toggle="tab" href="#manage"><i class="fa fa-bars"></i><span>Manage Vacancy</span></a></li>
+          <li class="sub-menu"><a data-toggle="tab" href="#newapplications"><i class="fa fa-bars"></i><span>New Job Applications </span></a></li>
+          <li class="sub-menu"><a data-toggle="tab" href="#applied"><i class="fa fa-sort" aria-hidden="true"></i><span>Sorted List </span></a></li>
+          <li class="sub-menu"><a data-toggle="tab" href="#reject"><i class="fa fa-trash-o" aria-hidden="true"></i><span>Rejected List </span></a></li>
+          <li class="sub-menu"><a data-toggle="tab" href="#reports"><i class="fa fa-flag-o" aria-hidden="true"></i><span>Reports </span></a></li>
+        </ul>
+        <a href="/">Back to home!</a>
+        <!-- sidebar menu end-->
+      </div>
+    </aside>
+    <!-- sidebar end-->
+    <!-- main content start-->
+    <section id="main-content">
+      <section class="wrapper site-min-height">
+        <div class="row mt">
+          <div class="col-md-12">
+            <div class="tab-content">
+              <div class="tab-pane fade in active" id="dashboard">
+                <div class="row dashboard-stats container">
+                  <div class="col-md-8 col-md-offset-1 col-sm-6">
+                    <section class="panel panel-box">
+                      <div class="panel-left panel-icon bg-success" style="padding-top:15px;padding-bottom:15px"><span style="font-size:30px">2</span></div>
+                      <div class="panel-right panel-icon bg-reverse" style="padding-top:15px;padding-bottom:15px">
+                        <p class="text-muted no-margin text">
+                          <h3>Total Vacancy Posted</h3>
+                        </p>
+                        <p class="size-h2"> </p>
+                      </div>
+                    </section>
+                  </div>
+                  <div class="col-md-8 col-md-offset-1 col-sm-6">
+                    <section class="panel panel-box">
+                      <div class="panel-left panel-icon bg-danger" style="padding-top:15px;padding-bottom:15px"><span style="font-size:30px">1</span></div>
+                      <div class="panel-right panel-icon bg-reverse" style="padding-top:15px;padding-bottom:15px">
+                        <p class="text-muted no-margin text">
+                          <h3>Total No of Applications</h3>
+                        </p>
+                        <p class="size-h2"> </p>
+                      </div>
+                    </section>
+                  </div>
+                  <div class="col-md-8 col-md-offset-1 col-sm-6">
+                    <section class="panel panel-box">
+                      <div class="panel-left panel-icon bg-lovender" style="padding-top:15px;padding-bottom:15px"><span style="font-size:30px">1</span></div>
+                      <div class="panel-right panel-icon bg-reverse" style="padding-top:15px;padding-bottom:15px">
+                        <p class="text-muted no-margin text">
+                          <h3>Total No of New Applications</h3>
+                        </p>
+                        <p class="size-h2"> </p>
+                      </div>
+                    </section>
+                  </div>
+                  <div class="col-md-8 col-md-offset-1 col-sm-6">
+                    <section class="panel panel-box">
+                      <div class="panel-left panel-icon bg-warning" style="padding-top:15px;padding-bottom:15px"><span style="font-size:30px">0</span></div>
+                      <div class="panel-right panel-icon bg-reverse" style="padding-top:15px;padding-bottom:15px">
+                        <p class="text-muted no-margin text">
+                          <h3>Total No of Selected Applications</h3>
+                        </p>
+                        <p class="size-h2"> </p>
+                      </div>
+                    </section>
+                  </div>
+
+
+                   <div class="col-md-8 col-md-offset-1 col-sm-6">
+                    <section class="panel panel-box">
+                      <div class="panel-left panel-icon bg-warning" style="padding-top:15px;padding-bottom:15px"><span style="font-size:30px">0</span></div>
+                      <div class="panel-right panel-icon bg-reverse" style="padding-top:15px;padding-bottom:15px">
+                        <p class="text-muted no-margin text">
+                          <h3>Total No of Rejected Applications</h3>
+                        </p>
+                        <p class="size-h2"> </p>
+                      </div>
+                    </section>
+                  </div>
+
+                </div>
+                
+              </div>
+              <div class="tab-pane fade align" id="vacancy" ng-controller="vacancyController">
+                <div class="container col-md-8 col-md-offset-2">
+                  <h1>Add Vacancy</h1><br>
+                  <div class="form-group">
+                    <label for="text">Company Name:</label>
+                    <input type="text" class="form-control" ng-model="vacancy.companyname" placeholder="Company Name"><br>
+                    <label for="text">Job Tittle</label>
+                    <input type="text" class="form-control" ng-model="vacancy.title" placeholder="Job Tittle"><br>
+                    <label for="text">Month In-Hand Salary</label>
+                    <input type="text" class="form-control" ng-model="vacancy.salary" placeholder="Month In-Hand salary"><br>
+                    <label for="text">Job Descriptions</label>
+                    <input type="text" class="form-control" ng-model="vacancy.description"  placeholder="Job Descriptions"><br>
+                    <label for="text">Job Location</label>
+                    <input type="text" class="form-control" ng-model="vacancy.location"  placeholder="Job Locations"><br>
+                    <label for="text">No Of openings</label>
+                    <input type="text" class="form-control" ng-model="vacancy.openings" placeholder="No Of Openings"><br>
+                    <label for="text">Apply Date</label>
+                    <input type="date" class="form-control" ng-model="vacancy.date" placeholder="Apply Date"><br>
+                    <label for="text">Last Date</label>
+                    <input type="date" class="form-control" ng-model="vacancy.lastdate"  placeholder="Last Date"><br>
+                    <button type="button" ng-click="vacancyData(vacancy)" class="btn btn-primary active">Add</button>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade align" id="manage" ng-controller="managecontroller">
+                <h1>Manage Vacancy</h1>
+                <div>
+                  <div>
+                    <label> Show </label>
+                    <select name="" id="">
+                      <option value=""> 1 </option>
+                      <option value="">2 </option>
+                      <option value="">3 </option>
+                      <option value="">10 </option>
+                    </select>
+                    <div class="topnav">
+                      <div class="search-container">
+                        <input type="text" placeholder="Search.." name="search" style="float:right; padding:10px;font-size:20px">
+                      </div><br>
+                      <br><br>
+                      <h3>Vacacy reports from 2020-05-01 to 2020-06-29</h3>
+                      <table class="table table-bordered table-striped table-hover">
+                        <tr>
+                          <th>S.NO</th>
+                          <th>Job Title</th>
+                          <th>Job Posting date</th>
+                          <th>Action</th>
+                        </tr>
+                        <tr ng-repeat="vacancy in vacancyData">
+                          <td>{{$index + 1}}</td>
+                          <td>{{vacancy.title}}</td>
+                          <td>{{vacancy.date}}</td>
+                          <td><a href="updatevacancy.html">Edit Details</a></td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade align" id="newapplications">
+                <h1>New Applications</h1>
+                <div>
+                  <label> Show </label>
+                  <select name="" id="">
+                    <option value=""> 10 </option>
+                    <option value="">9 </option>
+                    <option value="">8</option>
+                    <option value="">7 </option>
+                  </select>
+                  <div class="topnav">
+                    <div class="search-container">
+                      <input type="text" placeholder="Search.." name="search" style="float:right; padding:10px;font-size:20px">
+                    </div><br>
+                    <table class="table table-bordered table-striped table-hover">
+                      <tr>
+                        <th>S.NO</th>
+                        <th>Job Title</th>
+                        <th>Job Posting date</th>
+                        <th>Job Applied by</th>
+                        <th>Action</th>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Web developer</td>
+                        <td>2020 23/06 9:00</td>
+                        <td>pooja</td>
+                        <td><a href="Applyjob.html">View Details</a></td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade align" id="applied">
+                <h1>Sorted Applications</h1>
+                <label> Show </label>
+                <select name="" id="">
+                  <option value=""> 1 </option>
+                  <option value="">2 </option>
+                  <option value="">3 </option>
+                  <option value="">10 </option>
+                </select>
+                <div class="topnav">
+                  <div class="search-container">
+                    <input type="text" placeholder="Search.." name="search" style="float:right; padding:10px;font-size:20px">
+                  </div><br>                    
+                  <br><br>
+                  <table class="table table-bordered table-striped table-hover">
+                    <tr>
+                      <th>S.NO</th>
+                      <th>Job Title</th>
+                      <th>Job Posting date</th>
+                      <th>Job Applied by</th>
+                      <th>Action</th>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>Web developer</td>
+                      <td>2020 23/06 9:00</td>
+                      <td>Sunitha</td>
+                      <td><a href="View.html">View Details</a></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="tab-pane fade align" id="reject">
+                <h1>Rejected List</h1>
+                <div>
+                  <label> Show </label>
+                  <select name="" id="">
+                    <option value=""> 1 </option>
+                    <option value="">2 </option>
+                    <option value="">3 </option>
+                    <option value="">10 </option>
+                  </select>
+                  <div class="topnav">
+                    <div class="search-container">
+                      <input type="text" placeholder="Search.." name="search" style="float:right; padding:10px;font-size:20px">
+                    </div><br>
+                    <br><br>
+                    <table class="table table-bordered table-striped table-hover" >
+                      <tr>   
+                        <th>S.NO</th>
+                        <th>Job Title</th>
+                        <th>Job Posting date</th>
+                        <th>Job Applied by</th>
+                        <th>Action</th>
+                      </tr>
+                      <tr>
+                        <td>No data available in table</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade align" id="reports">
+                  <div>
+                  <h1>Vacancy Count Report</h1></div><br>
+                  <div class="container-fluid">
+                    <div class="row">
+                        <span>From Date</span><br><br>
+                        <input type="text" id="date" name="date" placeholder="MM/DD/YY"><br><br>
+                        <span>To Date</span><br><br>
+                        <input type="text" id="date" name="date" placeholder="MM/DD/YY"><br><br>
+                        <button type="button" class="btn btn-primary active">Submit</button>
+                    </div>
+                  </div>
+
+                </div>
+
+
+              </section>
+            </section>
+          </section>
+        </body>
+        <script src="javascripts/jquery.js"></script>
+        <script src="javascripts/bootstrap.min.js"></script>
+        <script src="javascripts/jquery-ui-1.9.2.custom.min.js"></script>
+        <script src="javascripts/jquery.ui.touch-punch.min.js"></script>
+        <script src="javascripts/jquery.dcjqaccordion.2.7.js"></script>
+        <script src="javascripts/jquery.scrollTo.min.js"></script>
+        <script src="javascripts/jquery.nicescroll.js"></script>
+        <!-- common script for all pages-->
+        <script src="javascripts/common-scripts.js"></script>
+        </html>

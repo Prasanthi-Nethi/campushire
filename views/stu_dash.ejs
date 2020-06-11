@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Dashboard">
+  <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+  <title>student</title>
+  <link type="image/png" href="images/adityalogo.png" rel="icon">
+  <!-- Bootstrap core CSS-->
+  <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+  <script src="javascripts/jquery-1.11.1.min.js"></script>
+  <script src="javascripts/bootstrap.min.js"></script>
+  <!-- external css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Custom styles for this template-->
+  <link href="stylesheets/style4.css" rel="stylesheet">
+  <link href="stylesheets/style-responsive.css" rel="stylesheet">
+  <!--Date Picker-->
+  <link href="stylesheets/jquery-ui.css" rel="stylesheet">
+  <script type="text/javascript" src="angularjs/angular.min.js"></script>
+  <script type="text/javascript" src="angularjs/studenthome.js"></script>
+  <style>
+    .panel-box {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+      height: 30px;
+      text-align: center;
+      border: medium none;
+    }
+    .bg-success {
+      background-color: #A3C86D !important;
+      color: #FFF !important;
+    }
+    .bg-warning {
+      background-color: orange !important;
+      color: #FFF !important;
+    }
+    .bg-light {
+      background-color: lightblue !important;
+      color: #FFF !important;
+    }
+    .bg-lightgreen {
+      background-color: lightgreen !important;
+      color: #FFF !important;
+    }
+    .bg-default {
+      background-color: grey !important;
+      color: #FFF !important;
+    }
+    .bg-pink {
+      background-color: pink !important;
+      color: #FFF !important;
+    }
+    .bg-tomato {
+      background-color: tomato !important;
+      color: #FFF !important;
+    }
+    .bg-dodgerblue {
+      background-color: dodgerblue !important;
+      color: #FFF !important;
+    }
+    .bg-violet {
+      background-color: violet !important;
+      color: #FFF !important;
+    }
+    .success-text {
+      color: #82b33a;
+    }
+    .bg-danger {
+      background-color: #FF7857 !important;
+      color: #FFF !important;
+    }
+    .danger-text {
+      color: #d15b3d;
+    }
+    .panel-box .panel-icon {
+      display: table-cell;
+      padding: px;
+      width: 1%;
+      vertical-align: top;
+      border-radius: 0px;
+      text-align: center;
+      /*border-bottom: 1px solid #fcfcfc;
+      border-top: 1px solid #fcfcfc;
+      border-right: 1px solid #fcfcfc;*/
+    }
+    .panel-box .size-h1 {
+      margin-top: 7px;
+    }
+    .panel-box .fa {
+      margin-top: 9px;
+    }
+    .bg-lovender {
+      background-color: #8075C4 !important;
+      color: #FFF !important;
+    }
+    .lovender-text {
+      color: #6a5fb1;
+    }
+    .capitalize {
+      text-transform: capitalize;
+    }
+    .uppercase {
+      text-transform: uppercase;
+    }
+
+
+    h1{
+  padding:50px;
+  background-color:skyblue;
+  font-size:50px;
+  width:100%;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+
+}
+
+td, th {
+  border: 3px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+  </style>
+</head>
+<body ng-app="myApp">
+  <section id="container">
+    <!-- header start-->
+    <header class="header black-bg">
+      <div class="sidebar-toggle-box">
+        <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+      </div>
+      <!-- logo start--><a class="logo" href="#"><b><img src="images/logo1.png" style="height:55px;width:80px;margin-top:-13px"></b></a>
+      <!-- logo end-->
+      <div class="top-menu">
+        <ul class="nav pull-right top-menu">
+          <li><a class="logout" href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </header>
+    <!-- header end-->
+    <!-- sidebar start-->
+    <aside>
+      <div class="nav-collapse" id="sidebar">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
+          <p class="centered"><a href="#"><i class="fa fa-user-circle" style="font-size:50px"></i></a></p>
+          <h5 class="centered">
+            <p><%=user.fname%></p>
+          </h5>
+          <li class="active"><a data-toggle="tab" href="#dashboard"><i class="fa fa-address-card"></i><span>Dashboard</span></a></li>
+          <li class="sub-menu"><a data-toggle="tab" href="#education"><i class="fa fa-graduation-cap" aria-hidden="true"></i></i><span>Education Details</span></a></li>
+          <li class="sub-menu"><a data-toggle="tab" href="#manage"><i class="fa fa-bars"></i><span>Manage Details</span></a></li>
+          <li class="sub-menu"><a data-toggle="tab" href="#vacancy"><i class="fa fa-eye" aria-hidden="true"></i><span>View Vacancy</span></a></li>
+          <li class="sub-menu"><a data-toggle="tab" href="#applied"><i class="fa fa-handshake-o" aria-hidden="true"></i><span>Applied Jobs </span></a></li>
+          <li class="sub-menu"><a data-toggle="tab" href="#reports"><i class="fa fa-flag-o"></i><span>Reports </span></a></li>
+          <li class="sub-menu"><a data-toggle="tab" href="#search"><i class="fa fa-search" aria-hidden="true"></i><span>Search Job </span></a></li>
+        </ul>
+        <a href="/">Back to home!</a>
+        <!-- sidebar menu end-->
+      </div>
+    </aside>
+    <!-- sidebar end-->
+    <!-- main content start-->
+    <section id="main-content">
+      <section class="wrapper site-min-height">
+        <div class="row mt">
+          <div class="col-md-12">
+            <div class="tab-content">
+              <div class="tab-pane fade in active" id="dashboard">
+                <div class="row dashboard-stats container">
+                  <div class="col-md-8 col-md-offset-1 col-sm-6">
+                    <section class="panel panel-box">
+                      <div class="panel-left panel-icon bg-success" style="padding-top:20px;padding-bottom:20px"><span style="font-size:30px">20</span></div>
+                      <div class="panel-right panel-icon bg-reverse" style="padding-top:20px;padding-bottom:20px">
+                        <p class="text-muted no-margin text">
+                          <h3>Today Applied</h3>
+                        </p>
+                        <p class="size-h2"> </p>
+                      </div>
+                    </section>
+                  </div>
+                  <div class="col-md-8 col-md-offset-1 col-sm-6">
+                    <section class="panel panel-box">
+                      <div class="panel-left panel-icon bg-danger" style="padding-top:20px;padding-bottom:20px"><span style="font-size:30px">10</span></div>
+                      <div class="panel-right panel-icon bg-reverse" style="padding-top:20px;padding-bottom:20px">
+                        <p class="text-muted no-margin text">
+                          <h3>Present Week</h3>
+                        </p>
+                        <p class="size-h2"> </p>
+                      </div>
+                    </section>
+                  </div>
+                  <div class="col-md-8 col-md-offset-1 col-sm-6">
+                    <section class="panel panel-box">
+                      <div class="panel-left panel-icon bg-lovender" style="padding-top:20px;padding-bottom:20px"><span style="font-size:30px">10</span></div>
+                      <div class="panel-right panel-icon bg-reverse" style="padding-top:20px;padding-bottom:20px">
+                        <p class="text-muted no-margin text">
+                          <h3>Vacancy Count</h3>
+                        </p>
+                        <p class="size-h2"> </p>
+                      </div>
+                    </section>
+                  </div>
+                  <div class="col-md-8 col-md-offset-1 col-sm-6">
+                    <section class="panel panel-box">
+                      <div class="panel-left panel-icon bg-warning" style="padding-top:20px;padding-bottom:20px"><span style="font-size:30px">30</span></div>
+                      <div class="panel-right panel-icon bg-reverse" style="padding-top:20px;padding-bottom:20px">
+                        <p class="text-muted no-margin text">
+                          <h3>Total Applied</h3>
+                        </p>
+                        <p class="size-h2"> </p>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade align" id="education" ng-controller="educationController">
+                <div class="container col-md-8 col-md-offset-2">
+                  <form class="form-group">
+                    <h1>Education Details</h1>
+                    <label for="text">10th(secondary)</label>
+                    <input type="text" class="form-control" placeholder="Board/university" ng-model="education.secondary">
+                    <label for="number">Year</label>
+                    <input type="year" class="form-control" placeholder="Year" ng-model="education.secondaryyear">
+                    <label for="text">Percentage</label>
+                    <input type="number" class="form-control" placeholder="Percentage"  ng-model="education.secondarypercentage">
+                    <label for="text">Cgpa</label>
+                    <input type="number" class="form-control" placeholder="cgpa"  ng-model="education.secondarycgpa">
+                    <label for="text">12th(senior secondary)</label>
+                    <input type="text" class="form-control" placeholder="Board/university" ng-model="education.seniorsecondary">
+                    <label for="number">Year</label>
+                    <input type="year" class="form-control" placeholder="Year" ng-model="education.senioryear">
+                    <label for="text">Percentage</label>
+                    <input type="number" class="form-control" placeholder="Percentage"  ng-model="education.seniorpercentage">
+                    <label for="text">Cgpa</label>
+                    <input type="number" class="form-control" placeholder="cgpa"  ng-model="education.seniorcgpa">
+                    <label for="text">Graduation</label>
+                    <input type="text" class="form-control" placeholder="Board/university" ng-model="education.graduation">
+                    <label for="number">Year</label>
+                    <input type="year" class="form-control" placeholder="Year" ng-model="education.graduationyear">
+                    <label for="text">Percentage</label>
+                    <input type="number" class="form-control" id="Percentage" placeholder="Percentage"  ng-model="education.graduationercentage">
+                    <label for="text">Cgpa</label>
+                    <input type="number" class="form-control" placeholder="cgpa"  ng-model="education.graduationcgpa">
+                    <label for="text-area">Other Acheivements/Certifications/Qualification</label>
+                    <input type="text" class="form-control" ng-model="education.others">
+                    <br>
+                    <button class="btn btn-info" ng-click="studentData(education)">Submit</button>
+                  </form>
+                </div>
+              </div>
+              <div class="tab-pane fade align" id="manage" ng-controller="editstudentController" ng-init="getData()">
+
+                <div class="container col-md-10 col-md-offset-1 table-responsive">
+                  <table class="table table-bordered table-hover table-striped">
+                    <thead>
+                      <tr>
+                        <th>10th(secondary)</th>
+                        <th>Year</th>
+                        <th>Percentage</th>
+                        <th>Cgpa</th>
+                        <th>12th(senior secondary)</th>
+                        <th>Year</th>
+                        <th>Percentage</th>
+                        <th>Cgpa</th>
+                        <th>Graduation</th>
+                        <th>Year</th>
+                        <th>Percentage</th>
+                        <th>Cgpa</th>
+                        <th>Other Acheivements</th>
+                      
+                      </tr>
+                      
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="education in educations">
+                        <td><span ng-hide="editEducation">{{education.secondary}}</span><input ng-show="editEducation" type="text" ng-model="education.secondary">
+                        </td>
+                        <td>
+                          <span ng-hide="editEducation">{{education.secondaryyear}}</span>
+                          <input ng-show="editEducation" type="text" ng-model="education.secondaryyear">
+                        </td>
+                        <td><span ng-hide="editEducation">{{education.secondarypercentage}}</span>
+                          <input ng-show="editEducation" type="text" ng-model="education.secondarypercentage"></td>
+                          <td><span ng-hide="editEducation">{{education.secondarycgpa}}</span>
+                            <input ng-show="editEducation" type="text" ng-model="education.secondarycgpa"></td>
+                            <td><span ng-hide="editEducation">{{education.seniorsecondary}}</span>
+                              <input ng-show="editEducation" type="text" ng-model="education.seniorsecondary"></td>
+                              <td><span ng-hide="editEducation">{{education.senioryear}}</span>
+                                <input ng-show="editEducation" type="text" ng-model="education.senioryear"></td>
+                                <td><span ng-hide="editEducation">{{education.seniorpercentage}}</span>
+                                  <input ng-show="editEducation" type="text" ng-model="education.seniorpercentage"></td>
+                                  <td><span ng-hide="editEducation">{{education.seniorcgpa}}</span>
+                                    <input ng-show="editEducation" type="text" ng-model="education.seniorcgpa"></td>
+                                    <td><span ng-hide="editEducation">{{education.graduation}}</span>
+                                      <input ng-show="editEducation" type="text" ng-model="education.graduation"></td>
+                                      <td><span ng-hide="editEducation">{{education.graduationyear}}</span>
+                                        <input ng-show="editEducation" type="text" ng-model="education.graduationyear"></td>
+                                        <td><span ng-hide="editEducation">{{education.graduationercentage}}</span>
+                                          <input ng-show="editEducation" type="text" ng-model="education.graduationercentage"></td>
+                                          <td><span ng-hide="editEducation">{{education.graduationcgpa}}</span>
+                                            <input ng-show="editEducation" type="text" ng-model="education.graduationcgpa"></td>
+                                            <td><span ng-hide="editEducation">{{education.others}}</span>
+                                              <input ng-show="editEducation" type="text" ng-model="education.others"></td>
+                                              <td style="white-space:nowrap">
+                                                <i class="fa fa-edit btn btn-warning" ng-hide="editEducation" ng-click="editEducation=true"></i>
+                                                <i class="fa fa-save btn btn-primary" ng-show="editEducation" ng-click="updateEducation(education);editEducation=false"></i>
+                                                <i class="fa fa-trash btn btn-danger" ng-click="removeEducation(education)"></i>
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                    <div class="tab-pane fade align" id="vacancy" ng-controller="vacancycontroller">
+                                     <div>
+                                      <h1> View Vacancy</h1></div>
+
+                                      <div>
+                                        <label> Show </label>
+                                        <select name="" id="">
+                                          <option value=""> 10 </option>
+                                          <option value="">9 </option>
+                                          <option value="">. </option>
+                                          <option value="">10 </option>
+                                        </select>
+                                        <div class="topnav">
+                                          <div class="search-container">
+                                            <input type="text" placeholder="Search.." name="search" style="float:right; padding:10px;font-size:20px">
+                                          </div><br>
+
+
+
+
+                                          <table class="table table-bordered table-striped table-hover">
+                                            <tr>
+
+                                              <th>S.NO</th>
+                                              <th>Company Name</th>
+                                              <th>Job Title</th>
+                                              <th>Job Posting date</th>
+                                              <th>Action</th>
+
+                                            </tr>
+                                            <tr ng-repeat="vacancy in VacancyData">
+                                              <td>{{$index + 1}}</td>
+                                              <td>{{vacancy.companyname}}</td>
+                                              <td>{{vacancy.title}}</td>
+                                              <td>{{vacancy.date}}</td>
+                                              <td><a href="/Applyjob">Apply for Job</a></td>
+                                            </tr>
+
+                                          </table>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="tab-pane fade align" id="applied">
+                                      <div>
+                                        <h1>Applied Jobs</h1></div>
+                                        <div>
+                                          <div class="topnav">
+                                            <div class="search-container">
+                                              <input type="text" placeholder="Search.." name="search" style="float:right; padding:10px;font-size:20px">
+                                            </div><br>
+                                            <table class="table table-bordered table-striped table-hover">
+                                              <tr>
+                                                <th>Job Title</th>
+                                                <th>Company Title</th>
+                                                <th>Job Description</th>
+                                                <th>Monthly in hand salary</th>
+                                                <th>Job Location</th>
+                                                <th>No of Openings</th>
+                                                <th>Apply Date</th>
+                                                <th>Last Date</th>
+                                                <th>Upload Resume</th>
+                                              </tr>
+                                              <tr>
+                                                <td>web developer</td>
+                                                <td>Infosys</td>
+                                                <td>full stack developer</td>
+                                                <td>1000000</td>
+                                                <td>hyderabad</td>
+                                                <td>10</td>
+                                                <td>05-04-2020</td>
+                                                <td>20-05-2020</td>
+                                                <td><input type="file" id="myfile" name="myfile"></td>
+                                              </tr>
+                                            </table>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="tab-pane fade align" id="reports">
+
+                                       <div>
+                                        <h1> Vacany Counts Reports</h1></div>
+
+                                        <div>
+                                          <h2 style="text-align:center;">Vacancy  Reports from  </h2>
+
+
+                                          <table>
+                                            <tr>
+                                              <th>S.NO</th>
+                                              <th>Job Title</th>
+                                              <th>Number of Applications</th>
+
+                                            </tr>
+                                            <tr>
+                                              <td>1</td>
+                                              <td>web developer</td>
+                                              <td>10</td>
+                                            </tr>
+                                            <tr>
+                                              <td>2</td>
+                                              <td></td>
+                                              <td></td>
+                                            </tr>
+
+
+                                          </table>
+                                        </div>
+
+
+                                      </div>
+                                      <div class="tab-pane fade align" id="search">
+                                        <div>
+                                          <h1>Search Job</h1></div>
+
+                                          <div>
+
+                                            <div class="search-container">
+                                              <input type="text" placeholder="Search" name="search-container" required><br><br>
+                                              <button type="submit">search</button><br><br>
+
+                                            </div><br>
+                                            <span>Req against "Sql" Keyword</span><br><br>
+                                            <label> Show </label>
+                                            <select name="" id="">
+                                              <option value=""> 10 </option>
+                                              <option value="">9 </option>
+                                              <option value="">. </option>
+                                              <option value="">1 </option>
+                                            </select>
+                                            <br><br>
+
+                                            <table class="table table-bordered table-striped table-hover">
+                                              <tr>
+
+                                                <th>S.NO</th>
+                                                <th>Job Title</th>
+                                      
+                                                <th>Job Posting date</th>
+                                                <th>Action</th>
+
+                                              </tr>
+                                              <tr>
+                                                <td>1</td>
+                                                <td>Sql Server Database Administartor</td>
+                                              
+                                                <td>2020 23/06 9:00</td>
+                                                <td><a href="/Applyjob">Apply for Job</a></td>
+                                              </tr>
+
+                                            </table>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </section>
+                              </section>
+                            </section>
+                            <script src="javascripts/jquery.js"></script>
+                            <script src="javascripts/bootstrap.min.js"></script>
+                            <script src="javascripts/jquery-ui-1.9.2.custom.min.js"></script>
+                            <script src="javascripts/jquery.ui.touch-punch.min.js"></script>
+                            <script src="javascripts/jquery.dcjqaccordion.2.7.js"></script>
+                            <script src="javascripts/jquery.scrollTo.min.js"></script>
+                            <script src="javascripts/jquery.nicescroll.js"></script>
+                            <!-- common script for all pages-->
+                            <script src="javascripts/common-scripts.js"></script>
+                          </body>
+                          </html>

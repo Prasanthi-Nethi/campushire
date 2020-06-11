@@ -6,7 +6,7 @@ app.controller('studentinController', function($scope,$http){
 			url : '/studentindata',
 			data : $scope.studentin
 		}).then(function success(response){
-      window.location.href = '/stu_home'
+      window.location.href = '/stu_dash'
 		}, function error(response){
       alert('Invalid Credentials');
 		})

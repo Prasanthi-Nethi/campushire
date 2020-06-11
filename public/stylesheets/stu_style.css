@@ -34,6 +34,10 @@ h1{
     width: 100%;
     margin-bottom: 20px;
 }
+.login-box button{
+    width: 100%;
+    margin-bottom: 20px;
+}
 .login-box input[type="email"], input[type="password"]
 {
     border: none;
@@ -44,7 +48,7 @@ h1{
     color: #fff;
     font-size: 15px;
 }
-.login-box input[type="submit"]
+.login-box button
 {
     border: none;
     outline: none;
@@ -54,7 +58,7 @@ h1{
     font-size: 18px;
     border-radius: 20px;
 }
-.login-box input[type="submit"]:hover
+.login-box button:hover
 {
     cursor: pointer;
     background: #39dc79;
@@ -72,17 +76,17 @@ h1{
 }
 #forgot-password{
     text-decoration: none;
-    color: #ffffff;
+    color: #000000;
     float: left;
     padding: 1.5px 0px;
     font-weight: bold;
     font-size: .85em;
     font-family: 'Roboto', sans-serif;
-    color: #000000;
+    
 }
 #new-user{
     text-decoration: none;
-    color: #ffffff;
+    color: #000000;
     float: left;
     padding: 15px 0px;
     font-weight: bold;
