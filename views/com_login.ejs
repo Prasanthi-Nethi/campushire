@@ -3,29 +3,29 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    
     <link href="stylesheets/comstyle.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="angularjs/angular.min.js"></script>
-  <script type="text/javascript" src="angularjs/companyin.js"></script>
+    <script type="text/javascript" src="angularjs/companyin.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
-  <body ng-app="companyinApp ">
+  <body ng-app="companyinApp">
+    <div class="login-box" ng-controller="companyinController">
+      <h1>Company Login</h1>
+      <div class="textbox">
+      <i class="fas fa-user" aria hidden="True"></i>
+      <input type="text" placeholder="Email" ng-model="company.Email">
+      </div>
+      <div class="textbox">
+      <i class="fas fa-lock" aria hidden="True"></i>
+      <input type="password" placeholder="Password" ng-model="company.password">
+      </div>
+      <button class="btn" ng-click="companyinData(company)">Signin</button><br><br>
+      <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
+      <a href="/forgot"> Forget Password?</a> <br><br>
+    
+            <p style="color:black"> Don't have an account? <a href="/com_up">Sign up</a><br><br>
 
-<div class="login-box" ng-controller="companyincontroller">
-  <h1>Company Login</h1>
-  <div class="textbox">
-    <i class="fas fa-user" aria hidden="True"></i>
-    <input type="email" ng-model="companyin.Email" placeholder="enter your email">
-  </div>
-
-  <div class="textbox">
-    <i class="fas fa-lock" aria hidden="True"></i>
-    <input type="password"  ng-model="companyin.password" placeholder="Password">
-  </div>
-
-  <button ng-click="companyIn(companyin)">Login</button>
-  <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
-
-				<a href ="#" id="forgot-password"> Forget Password?</a><br><br>
-								<br><a href ="/com_up" id="forgot-password"> Don't have a account? Create New?</a><br><br>
+       <a href="/" style="color:blue">Back to home!</a>
+    </div>
   </body>
 </html>

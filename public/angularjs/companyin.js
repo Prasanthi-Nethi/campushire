@@ -1,12 +1,12 @@
 var app = angular.module('companyinApp',[]);
-app.controller('studentinController', function($scope,$http){
-	$scope.companyIn = function(companyin){
+app.controller('companyinController', function($scope,$http){
+	$scope.companyinData = function(company){
 		$http({
 			method : 'POST',
 			url : '/companyindata',
-			data : $scope.companyin
+			data : $scope.company
 		}).then(function success(response){
-      window.location.href = '#/com_home'
+      window.location.href = '/company_dashboard'
 		}, function error(response){
       alert('Invalid Credentials');
 		})
